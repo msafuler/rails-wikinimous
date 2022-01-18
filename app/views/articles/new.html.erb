@@ -1,0 +1,18 @@
+<nav>
+  <ul class="navigation_bar">
+    <li id="wikinimous"><a href="#">Wikinimous</a></li>
+  </ul>
+</nav>
+
+<div class="create_article_form">
+  <h1>New article</h1>
+    <%= form_for(@article) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :content %>
+      <%= f.text_area(:content, size: '50x10') %>
+      <%= f.submit %>
+    <% end %>
+
+    <%= link_to "Back", articles_path %>
+</div>

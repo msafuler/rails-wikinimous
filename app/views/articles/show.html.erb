@@ -1,0 +1,24 @@
+<nav>
+  <ul class="navigation_bar">
+    <li id="wikinimous"><a href="#">Wikinimous</a></li>
+    <li id="new_article"><%= link_to "New article", new_article_path %></li>
+  </ul>
+</nav>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <p id="update_text"><%= msg %></p>
+  </div>
+<% end %>
+
+<div class="article_content">
+  <h2><%= @article.title %>
+    <%= link_to edit_article_path(@article) do %>
+      &#x270E;
+    <% end %>
+    <%= link_to article_path(@article), method: :delete do %>
+      &#128465;
+    <% end %>
+  </h2>
+  <p><%= @article.content %></p>
+</div>
